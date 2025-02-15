@@ -6,6 +6,13 @@ plugins {
 java {
     sourceCompatibility = JavaVersion.VERSION_17
     targetCompatibility = JavaVersion.VERSION_17
+
+    
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+    options.compilerArgs << '-parameters'
+    options.release = 17
+}
 }
 
 def ROBOT_MAIN_CLASS = "frc.robot.Main"
