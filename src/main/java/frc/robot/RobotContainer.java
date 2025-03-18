@@ -46,7 +46,41 @@ public class RobotContainer {
   /**
    * The container for the robot. Contains subsystems, OI devices, and commands.
    */
+  
   public RobotContainer() {
+      configureBindings();
+  }
+
+  private void configureBindings() {
+      // Example: Use buttons A (down) and Y (up) to move climber
+      new JoystickButton(controller, XboxController.Button.kA.value)
+          .whileTrue(new ClimberMoveDown(climberSubsystem));
+
+      new JoystickButton(controller, XboxController.Button.kY.value)
+          .whileTrue(new ClimberMoveUp(climberSubsystem));
+  }
+
+  public Climber getClimberSubsystem() {
+      return climberSubsystem;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   public RobotContainer() {
     configureBindings();
 
   // Set the options to show up in the Dashboard for selecting auto modes. If you
@@ -116,3 +150,4 @@ autoChooser.setDefaultOption("Autonomous", Autos.exampleAuto(driveSubsystem, rol
     return autoChooser.getSelected();
   }
 }
+

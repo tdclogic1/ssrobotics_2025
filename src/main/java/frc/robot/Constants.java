@@ -38,4 +38,13 @@ public final class Constants {
     public static final int DRIVER_CONTROLLER_PORT = 0;
     public static final int OPERATOR_CONTROLLER_PORT = 1;
   }
+
+  public static final class Climber {
+    public static final int kClimberMotorCANId = 15; // Set your actual CAN ID
+    public static final double kClimberSpeed = 0.2; // Slow winch speed (adjust if needed)
+
+    // Encoder positions (adjust based on your setup and testing)
+    public static final double kTopPosition = 0.0;          // 12:00 position
+    public static final double kBottomPosition = -105.0;    // 8:30 position (counterclockwise 105 degrees)
+}
 }
